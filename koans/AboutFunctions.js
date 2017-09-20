@@ -98,18 +98,36 @@ describe("About Functions", function() {
     expect(praiseSinger.givePraise("Mary")).toBe('Mary totally rules!');
       
   });
-//need to come back to this one
-  xit("should use function body as a string", function() {
+
+  it("should use function body as a string", function() {
     var add = new Function("a", "b", "return a + b;");
     expect(add(1, 2)).toBe(3);
      
-    var multiply = function(a, b) {
+
+    var multiply = 
+    function(a, b) {
       // An internal comment
       return a * b;
     };
-    console.log (multiply.toString())
-    expect(multiply.toString()).toBe(
-      // "function(a, b) {\n\/\/ An internal comment\nreturn a * b;\n}"
-    );
+    
+    // var stringg="function (a, b) {\n  // An internal comment\n  return a * b;\n}"
+    
+    
+        console.log (multiply.toString())
+        // console.log (stringg)
+    
+        // console.log(multiply.toString() === stringg)
+
+    expect(multiply.toString()).toBe("function (a, b) {\n    // An internal comment\n    return a * b;\n}") 
+
+    //this string works in jsBin
+    //var stringg="function (a, b) {\n    // An internal comment\n    return a * b;\n}"
+
+    //https://repl.it/LVE9/1
+    //this string works in Replit
+    // var stringg="function (a, b) {\n    // An internal comment\n    return a * b;\n}"
+
+    //notice they are not the same string....
+
   });    
 });
